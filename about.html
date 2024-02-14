@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width",initial-scale="1.0">
+    <title>Hyundai</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #eaeaea;
+}
+
+.header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:30px 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.sym{
+    height: 30px;
+    width: 60px;
+}
+
+.navbar a{
+    display: inline-block;
+    font-size: 18px;
+    color:#222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: .3s;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #000ff0;
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+   
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background:transparent;
+    border: 2px solid transparent ;
+    text-decoration: none;
+    transform: rotate(45deg); 
+    transition: .5s;
+    animation: slideSci .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover{
+    border-color: rgb(255, 255, 255) ;
+}
+
+.social-media a i{
+    font-size: 24px;
+    color:rgb(255, 255, 255);
+    transform: rotate(-45deg);
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 8% 0;
+    overflow: hidden;
+}
+
+.home-content{
+    max-width: 630px;
+}
+
+.home-content h1{
+     font-size: 50px;
+     line-height: 1.2;
+     opacity: 0;
+     animation: slideBottom 1s ease forwards;
+     animation-delay: 1s;
+}
+
+.home-content h3{
+    font-size: 40px;
+    color:#000ff0;
+    transition: 0.5s;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-content h3:hover{
+    font-size:90px;
+}
+
+.home-content p{
+    font-size: 16px;
+    margin: 15px 0 30px;
+    justify-content: space-between;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-img{
+    position: relative;
+    right: -7% ;
+    width:450px;
+    height: 450px;
+    transform: rotate(45deg);
+}
+
+.home-img .rhombus{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: #eaeaea;
+    border:25px solid #000ff0;
+    box-shadow: -15px 15px 15px rgba(0,0,0,.2);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-img .rhombus img{
+    position: absolute;
+    top:90px;
+    left:-250px;
+    max-width: 750px;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 2s;
+}
+
+
+.home .rhombus2{
+    position: absolute;
+    top:-25%;
+    right:-25%;
+    width:700px;
+    height:700px;
+    background:#000ff0;
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: rhombus2 1s ease forwards;
+}
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+  
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideBottom{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideSci{
+    0%{
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+
+}
+
+@keyframes zoomOut{
+    0%{
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes car{
+    0%{
+        transform: translate(300px,-300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translate(0,0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+
+}
+
+@keyframes rhombus2{
+    0%{
+        right: -40%;
+        opacity: 0;
+    }
+
+    100%{
+        right: -25%;
+        opacity: 1;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="hyundai.png" class="sym"><a href="#" class="logo">Hyundai</a>
+
+        <nav class="navbar">
+            <a href="hyundai.html" style="--i:1;" class="active ">Home</a>
+            <a href="about.html" style="--i:2;">About</a>
+            <a href="#" style="--i:3;">Review</a>
+            <a href="feature.html" style="--i:4;">Featured</a>
+            <a href="contact.html" target="_blank" style="--i:5;">Contact</a>
+        </nav>
+
+        <div class="social-media">
+            <a href="https://twitter.com/hyundai_global" style="--i:1;"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.facebook.com/HyundaiIndia/" style="--i:2;"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://www.instagram.com/hyundaiindia/ " style="--i:3;"><i class='bx bxl-instagram' ></i></a>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <p></p>
+            <h1>About</h1>
+            <p></p>
+            <h3>Kun-Hyudai</h3>
+            <p>Hyundai is a South Korean multinational automotive manufacturer headquartered in Seoul, South Korea. It is one of the largest automobile manufacturers in the world and is known for producing a wide range of vehicles, including cars, SUVs, and commercial vehicles.
+
+                Hyundai was founded in 1967 by Chung Ju-Yung and initially focused on construction projects. However, the company entered the automobile industry in the 1970s, and its first car, the Hyundai Pony, was introduced in 1975. Since then, Hyundai has grown into a global automotive powerhouse, with a presence in numerous countries and a reputation for producing affordable, reliable, and innovative vehicles.
+                
+                Some popular Hyundai models include the Hyundai Sonata, Hyundai Elantra, Hyundai Tucson, Hyundai Santa Fe, and Hyundai Palisade. Hyundai has also been at the forefront of developing alternative fuel technologies, including hybrid and electric vehicles.
+                
+                The company's subsidiary, Kia Corporation, is another prominent South Korean automaker, and together with Hyundai, they form the Hyundai Motor Group, one of the largest automotive groups in the world.
+                </p>
+        </div>
+
+        <div class="home-img">
+            <div class="rhombus">
+                <img src="blue.png" alt="car">
+            </div>
+        </div>
+
+        <div class="rhombus2"></div>
+    </section>
+</body>
+</html>
